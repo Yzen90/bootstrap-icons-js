@@ -1,0 +1,51 @@
+{
+  "name": "@xrnoz/bootstrap-icons-js",
+  "version": "1.0.0",
+  "description": "Re-packaging of Bootstrap Icons",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist/**"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@tsconfig/node20": "20.1.0",
+    "@tsconfig/strictest": "2.0.1",
+    "@types/lodash": "4.14.196",
+    "@types/node": "20.4.8",
+    "bootstrap-icons": "1.10.5",
+    "del-cli": "5.0.0",
+    "glob": "10.3.3",
+    "htmlparser2": "9.0.0",
+    "lodash": "4.17.21",
+    "npm-run-all": "4.1.5",
+    "prettier": "3.0.1",
+    "tsx": "3.12.7",
+    "typescript": "5.1.6"
+  },
+  "engines": {
+    "yarn": "=1.22.19"
+  },
+  "scripts": {
+    "build": "run-s -l build:*",
+    "build:clean": "del-cli dist && del-cli icons.ts",
+    "build:generate": "tsx build.ts",
+    "build:compile": "tsc --project tsconfig.build.json",
+    "fmt": "prettier --write .",
+    "prepublishOnly": "yarn build"
+  },
+  "keywords": [
+    "bootstrap icons"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xrnoz/bootstrap-icons-js.git"
+  },
+  "author": "Edgar Montiel Cruz <edgar@xrnoz.pro>",
+  "license": "MIT",
+  "private": false
+}

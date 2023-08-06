@@ -1,0 +1,11 @@
+# ignore all files
+*
+
+# include all folders
+!**/
+
+# include files to format
+!*.ts
+
+dist/
+icons.ts
